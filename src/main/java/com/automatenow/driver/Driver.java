@@ -19,7 +19,6 @@ public final class Driver {
 			System.setProperty("webdriver.chrome.driver", FrameworkConstants.getChromeDriverPath());
 			DriverManager.setDriver(new ChromeDriver());
 			DriverManager.getDriver().get(ReadPropertyFile.get("url"));
-			Thread.sleep(5000);
 		}
 
 	}

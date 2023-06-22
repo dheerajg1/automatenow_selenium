@@ -1,21 +1,30 @@
 package com.automatenow.pages;
 
+import java.time.Duration;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.automatenow.driver.DriverManager;
 
-public final class OrangeHRMHomePage {
+public final class OrangeHRMHomePage extends BasePage{
 
-	private final By link_username = By.xpath("//*[contains(@class, 'oxd-userdropdown-name')]");
-	private final By link_logout = By.xpath("//*[text()='Logout']");
-
+	private final By linkUsername = By.xpath("//*[contains(@class, 'oxd-userdropdown-name')]");
+	private final By linkLogout = By.xpath("//*[text()='Logout']");
+	private WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(10));
+	
+	
+	
 	public OrangeHRMHomePage clickUsername() {
-		DriverManager.getDriver().findElement(link_username).click();
+		wait.until(ExpectedConditions.presenceOfElementLocated(linkUsername));
+		click(linkUsername);
 		return this;
 	}
 	
 	public OrangeHRMLoginPage clickLogout() {
-		DriverManager.getDriver().findElement(link_logout).click();
+		wait.until(ExpectedConditions.elementToBeClickable(linkLogout));
+		click(linkLogout);
 		return new OrangeHRMLoginPage();
 	}
 }

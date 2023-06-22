@@ -1,5 +1,6 @@
 package com.automatenow.tests;
 
+import org.assertj.core.api.Assertions;
 import org.testng.annotations.Test;
 
 import com.automatenow.pages.OrangeHRMHomePage;
@@ -13,6 +14,7 @@ public final class OrangeHRMTests extends BaseTest{
 	
 	@Test
 	public void loginLogoutTest() throws InterruptedException {
+		/*
 		OrangeHRMLoginPage ohlp = new OrangeHRMLoginPage();
 		ohlp.enterUsername("Admin").enterPassword("admin123").clickLogin();
 		Thread.sleep(5000);
@@ -20,6 +22,14 @@ public final class OrangeHRMTests extends BaseTest{
 		
 		OrangeHRMHomePage ohhp = new OrangeHRMHomePage();
 		ohhp.clickUsername().clickLogout();
+		*/
+		
+		String title = new OrangeHRMLoginPage().enterUsername("Admin").enterPassword("admin123").clickLogin()
+				.clickUsername().clickLogout()
+				.getTitle();
+		
+		Assertions.assertThat(title)
+		.isEqualTo("OrangeHRM");
 	}
 }
 
