@@ -9,10 +9,11 @@ import java.util.Objects;
 import java.util.Properties;
 
 import com.automatenow.constants.FrameworkConstants;
+import com.automatenow.enums.ConfigProperties;
 
-public final class ReadPropertyFile {
+public final class PropertyUtils {
 
-	private ReadPropertyFile() {
+	private PropertyUtils() {
 
 	}
 
@@ -50,12 +51,12 @@ public final class ReadPropertyFile {
 	// USING HASHMAP INSTEAD OF DIRECT PROPERIES FILE
 	// ADVISABLE IF WE NEED TO READ PROPERTIES FILE AGAIN AND AGAIN, ELSE USE
 	// getValue FUNCTION
-	public static String get(String key) throws Exception {
+	public static String get(ConfigProperties key) throws Exception {
 
-		if (Objects.isNull(key) || Objects.isNull(CONFIGMAP.get(key))) {
+		if (Objects.isNull(key) || Objects.isNull(key)) {
 			throw new Exception("Property value is not found. Please check config.properties file");
 		}
-		return CONFIGMAP.get(key);
+		return CONFIGMAP.get(key.name().toLowerCase());
 
 	}
 
