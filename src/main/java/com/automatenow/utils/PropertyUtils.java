@@ -53,7 +53,7 @@ public final class PropertyUtils {
 	// getValue FUNCTION
 	public static String get(ConfigProperties key) throws Exception {
 
-		if (Objects.isNull(key) || Objects.isNull(key)) {
+		if (Objects.isNull(key) || Objects.isNull(CONFIGMAP.get(key.name().toLowerCase()))) {
 			throw new Exception("Property value is not found. Please check config.properties file");
 		}
 		return CONFIGMAP.get(key.name().toLowerCase());
