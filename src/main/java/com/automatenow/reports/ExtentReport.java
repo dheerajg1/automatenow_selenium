@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Objects;
 
+import com.automatenow.constants.FrameworkConstants;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
@@ -18,11 +19,11 @@ public final class ExtentReport {
 		
 	}
 	
-	public static void initReports() {
+	public static void initReports() throws Exception {
 		
 		if(Objects.isNull(extent)) {
 			extent = new ExtentReports();
-			ExtentSparkReporter spark = new ExtentSparkReporter("index.html");
+			ExtentSparkReporter spark = new ExtentSparkReporter(FrameworkConstants.getExtentReportFilePath());
 			extent.attachReporter(spark);
 			
 			spark.config().setTheme(Theme.DARK);
@@ -35,7 +36,13 @@ public final class ExtentReport {
 		if(Objects.nonNull(extent)) {
 			extent.flush();	
 		}
-		Desktop.getDesktop().browse(new File("index.html").toURI());
+		try {
+			Desktop.getDesktop().browse(new File(FrameworkConstants.getExtentReportFilePath()).toURI());
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public static void createTest(String testcasename) {

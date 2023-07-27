@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-07-18T00:40:20 IST" name="Suite" finished-at="2023-07-18T00:40:37 IST" duration-ms="17345">
+  <suite started-at="2023-07-28T02:45:11 IST" name="Suite" finished-at="2023-07-28T02:45:34 IST" duration-ms="23554">
     <groups>
     </groups>
-    <test started-at="2023-07-18T00:40:20 IST" name="Test" finished-at="2023-07-18T00:40:37 IST" duration-ms="17345">
+    <test started-at="2023-07-28T02:45:11 IST" name="Test" finished-at="2023-07-28T02:45:34 IST" duration-ms="23554">
       <class name="com.automatenow.tests.OrangeHRMTests">
-        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:com.automatenow.tests.OrangeHRMTests@26abb146]" started-at="2023-07-18T00:40:20 IST" name="beforeSuite" finished-at="2023-07-18T00:40:20 IST" duration-ms="272" status="PASS">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:com.automatenow.tests.OrangeHRMTests@65f8f5ae]" started-at="2023-07-28T02:45:11 IST" name="beforeSuite" finished-at="2023-07-28T02:45:11 IST" duration-ms="9" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.automatenow.tests.OrangeHRMTests@26abb146]" started-at="2023-07-18T00:40:20 IST" name="setUp" finished-at="2023-07-18T00:40:30 IST" duration-ms="10018" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.automatenow.tests.OrangeHRMTests@65f8f5ae]" started-at="2023-07-28T02:45:11 IST" name="setUp" finished-at="2023-07-28T02:45:19 IST" duration-ms="8520" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.automatenow.tests.OrangeHRMTests@26abb146]" started-at="2023-07-18T00:40:20 IST" name="setUp" finished-at="2023-07-18T00:40:32 IST" duration-ms="12090" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.automatenow.tests.OrangeHRMTests@65f8f5ae]" started-at="2023-07-28T02:45:11 IST" name="setUp" finished-at="2023-07-28T02:45:20 IST" duration-ms="9264" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="loginLogoutTest(java.lang.String,java.lang.String)[pri:0, instance:com.automatenow.tests.OrangeHRMTests@26abb146]" started-at="2023-07-18T00:40:30 IST" name="loginLogoutTest" data-provider="LoginTestDataProvider" finished-at="2023-07-18T00:40:35 IST" duration-ms="5044" status="PASS">
+        <test-method signature="loginLogoutTest(java.lang.String,java.lang.String)[pri:0, instance:com.automatenow.tests.OrangeHRMTests@65f8f5ae]" started-at="2023-07-28T02:45:19 IST" name="loginLogoutTest" data-provider="LoginTestDataProvider" finished-at="2023-07-28T02:45:25 IST" duration-ms="5433" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -35,11 +35,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginLogoutTest -->
-        <test-method signature="loginLogoutTest(java.lang.String,java.lang.String)[pri:0, instance:com.automatenow.tests.OrangeHRMTests@26abb146]" started-at="2023-07-18T00:40:32 IST" name="loginLogoutTest" data-provider="LoginTestDataProvider" finished-at="2023-07-18T00:40:37 IST" duration-ms="5027" status="PASS">
+        <test-method signature="loginLogoutTest(java.lang.String,java.lang.String)[pri:0, instance:com.automatenow.tests.OrangeHRMTests@65f8f5ae]" started-at="2023-07-28T02:45:20 IST" name="loginLogoutTest" data-provider="LoginTestDataProvider" finished-at="2023-07-28T02:45:34 IST" duration-ms="13896" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Admin]]>
+                <![CDATA[Admin1]]>
               </value>
             </param>
             <param index="1">
@@ -48,18 +48,58 @@
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for element to be clickable: By.xpath: //*[contains(@class, 'oxd-userdropdown-name')] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.18'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.248, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\dheer\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:62612}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62612/devtoo..., se:cdpVersion: 114.0.5735.248, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 071375d73e583939b2ffdb43bc80c773]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: By.xpath: //*[contains(@class, 'oxd-userdropdown-name')] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.18'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.248, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\dheer\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:62612}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62612/devtoo..., se:cdpVersion: 114.0.5735.248, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 071375d73e583939b2ffdb43bc80c773
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+at com.automatenow.factories.ExplicitWaitFactory.performExplicitWait(ExplicitWaitFactory.java:24)
+at com.automatenow.pages.BasePage.click(BasePage.java:26)
+at com.automatenow.pages.OrangeHRMHomePage.clickUsername(OrangeHRMHomePage.java:17)
+at com.automatenow.tests.OrangeHRMTests.loginLogoutTest(OrangeHRMTests.java:32)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:80)
+at org.testng.internal.invokers.TestMethodWithDataProviderMethodWorker.call(TestMethodWithDataProviderMethodWorker.java:17)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+at java.base/java.lang.Thread.run(Thread.java:834)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginLogoutTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.automatenow.tests.OrangeHRMTests@26abb146]" started-at="2023-07-18T00:40:35 IST" name="tearDown" finished-at="2023-07-18T00:40:35 IST" duration-ms="194" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.automatenow.tests.OrangeHRMTests@65f8f5ae]" started-at="2023-07-28T02:45:25 IST" name="tearDown" finished-at="2023-07-28T02:45:25 IST" duration-ms="193" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.automatenow.tests.OrangeHRMTests@26abb146]" started-at="2023-07-18T00:40:37 IST" name="tearDown" finished-at="2023-07-18T00:40:37 IST" duration-ms="170" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.automatenow.tests.OrangeHRMTests@65f8f5ae]" started-at="2023-07-28T02:45:34 IST" name="tearDown" finished-at="2023-07-28T02:45:34 IST" duration-ms="185" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="afterSuite()[pri:0, instance:com.automatenow.tests.OrangeHRMTests@26abb146]" started-at="2023-07-18T00:40:37 IST" name="afterSuite" finished-at="2023-07-18T00:40:38 IST" duration-ms="1043" status="PASS">
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:com.automatenow.tests.OrangeHRMTests@65f8f5ae]" started-at="2023-07-28T02:45:34 IST" name="afterSuite" finished-at="2023-07-28T02:45:34 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->

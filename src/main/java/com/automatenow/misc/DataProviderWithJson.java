@@ -9,7 +9,7 @@ public class DataProviderWithJson {
 	
 	@Test(dataProvider = "getData")
 	public void testDPWithJson(Map<String, Object> map) {
-		map.forEach((k, v)-> System.out.println(k + " : " + v));
+		//map.forEach((k, v)-> System.out.println(k + " : " + v));
 	}
 	
 	@DataProvider

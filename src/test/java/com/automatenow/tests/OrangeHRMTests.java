@@ -26,7 +26,7 @@ public final class OrangeHRMTests extends BaseTest{
 		ohhp.clickUsername().clickLogout();
 		*/
 		
-		ExtentReport.createTest("loginLogoutTest");
+		//ExtentReport.createTest("loginLogoutTest");
 		
 		String title = new OrangeHRMLoginPage().enterUsername(username).enterPassword(password).clickLogin()
 				.clickUsername().clickLogout()
@@ -40,7 +40,7 @@ public final class OrangeHRMTests extends BaseTest{
 	public Object[][] getData(){
 		return new Object[][] {
 			{"Admin", "admin123"},
-			{"Admin", "admin123"},
+			{"Admin1", "admin123"},
 //			{"Admin", "admin123"},
 //			{"Admin123", "admin123"}
 		};

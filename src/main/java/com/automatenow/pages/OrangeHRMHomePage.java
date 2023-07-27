@@ -3,6 +3,7 @@ package com.automatenow.pages;
 import org.openqa.selenium.By;
 
 import com.automatenow.enums.WaitStrategy;
+import com.automatenow.reports.ExtentLogger;
 import com.automatenow.reports.ExtentManager;
 import com.automatenow.reports.ExtentReport;
 
@@ -13,14 +14,12 @@ public final class OrangeHRMHomePage extends BasePage{
 	
 	
 	public OrangeHRMHomePage clickUsername() {
-		click(linkUsername, WaitStrategy.CLICKABLE);
-		ExtentManager.getExtTest().pass("Username clicked");
+		click(linkUsername, WaitStrategy.CLICKABLE, "Username");
 		return this;
 	}
 	
 	public OrangeHRMLoginPage clickLogout() {
-		click(linkLogout, WaitStrategy.CLICKABLE);
-		ExtentManager.getExtTest().pass("Logout button clicked");
+		click(linkLogout, WaitStrategy.CLICKABLE, "Logout Button");
 		return new OrangeHRMLoginPage();
 	}
 }
