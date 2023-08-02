@@ -6,6 +6,7 @@ import org.openqa.selenium.TakesScreenshot;
 import com.automatenow.driver.DriverManager;
 import com.automatenow.enums.ConfigProperties;
 import com.automatenow.utils.PropertyUtils;
+import com.automatenow.utils.ScreenshotUtils;
 import com.aventstack.extentreports.MediaEntityBuilder;
 
 public final class ExtentLogger {
@@ -28,7 +29,7 @@ public final class ExtentLogger {
 	
 	public static void pass(String message, boolean isScreenshotNeeded) throws Exception {
 		if(PropertyUtils.get(ConfigProperties.PASSEDSTEPSSCREENSHOTS).equalsIgnoreCase("yes") && isScreenshotNeeded) {
-			ExtentManager.getExtTest().pass(message, MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64Image()).build());
+			ExtentManager.getExtTest().pass(message, MediaEntityBuilder.createScreenCaptureFromBase64String(ScreenshotUtils.getBase64Image()).build());
 		}else {
 			pass(message);
 		}
@@ -36,7 +37,7 @@ public final class ExtentLogger {
 	
 	public static void fail(String message, boolean isScreenshotNeeded) throws Exception {
 		if(PropertyUtils.get(ConfigProperties.FAILEDSTEPSSCREENSHOTS).equalsIgnoreCase("yes") && isScreenshotNeeded) {
-			ExtentManager.getExtTest().fail(message, MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64Image()).build());
+			ExtentManager.getExtTest().fail(message, MediaEntityBuilder.createScreenCaptureFromBase64String(ScreenshotUtils.getBase64Image()).build());
 		}else {
 			fail(message);
 		}
@@ -44,13 +45,10 @@ public final class ExtentLogger {
 	
 	public static void skip(String message, boolean isScreenshotNeeded) throws Exception {
 		if(PropertyUtils.get(ConfigProperties.SKIPPEDSTEPSSCREENSHOTS).equalsIgnoreCase("yes") && isScreenshotNeeded) {
-			ExtentManager.getExtTest().skip(message, MediaEntityBuilder.createScreenCaptureFromBase64String(getBase64Image()).build());
+			ExtentManager.getExtTest().skip(message, MediaEntityBuilder.createScreenCaptureFromBase64String(ScreenshotUtils.getBase64Image()).build());
 		}else {
 			skip(message);
 		}
 	}
 	
-	public static String getBase64Image() {
-		return ((TakesScreenshot)DriverManager.getDriver()).getScreenshotAs(OutputType.BASE64);
-	}
 }

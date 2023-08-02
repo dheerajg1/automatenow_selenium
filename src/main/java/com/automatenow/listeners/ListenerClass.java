@@ -1,6 +1,7 @@
 package com.automatenow.listeners;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 import org.testng.ISuite;
 import org.testng.ISuiteListener;
@@ -18,7 +19,6 @@ public class ListenerClass implements ITestListener, ISuiteListener{
 		try {
 			ExtentReport.initReports();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -28,14 +28,13 @@ public class ListenerClass implements ITestListener, ISuiteListener{
 		try {
 			ExtentReport.flushReports();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
 	@Override
 	public void onTestStart(ITestResult result) {
-		ExtentReport.createTest(result.getMethod().getMethodName());
+		ExtentReport.createTest(result.getMethod().getDescription());
 	}
 
 	@Override
@@ -47,8 +46,9 @@ public class ListenerClass implements ITestListener, ISuiteListener{
 	public void onTestFailure(ITestResult result) {
 		try {
 			ExtentLogger.fail(result.getMethod().getMethodName() + " test is failed!", true);
+			ExtentLogger.fail(result.getThrowable().toString());
+			ExtentLogger.fail(Arrays.toString(result.getThrowable().getStackTrace()));
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
@@ -60,17 +60,23 @@ public class ListenerClass implements ITestListener, ISuiteListener{
 
 	@Override
 	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
-		
+		/*
+		 * No implementation yet
+		 */
 	}
 
 	@Override
 	public void onTestFailedWithTimeout(ITestResult result) {
-		
+		/*
+		 * No implementation yet
+		 */
 	}
 
 	@Override
 	public void onStart(ITestContext context) {
-		
+		/*
+		 * No implementation yet
+		 */
 	}
 
 	@Override
