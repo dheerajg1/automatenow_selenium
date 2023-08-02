@@ -21,13 +21,11 @@ public final class ExcelUtils {
 	public static FileInputStream fs;
 	public static List<Map<String, String>> list;
 	
-	public static List<Map<String, String>> getTestDetails(){
+	public static List<Map<String, String>> getTestDetails(String sheetname){
 				
 		try {
 			fs = new FileInputStream(FrameworkConstants.getExcelPath());
 			XSSFWorkbook workbook = new XSSFWorkbook(fs);
-			
-			String sheetname = "RUNMANAGER";
 			XSSFSheet sheet = workbook.getSheet(sheetname);
 			
 			Map<String, String> map = null;

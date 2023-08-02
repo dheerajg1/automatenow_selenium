@@ -10,7 +10,7 @@
       <class name="com.automatenow.tests.OrangeHRMTests">
         <methods>
           <include name="beforeSuite"/>
-          <include name="newTest" invocation-numbers="0"/>
+          <include name="loginLogoutTest" invocation-numbers="1"/>
           <include name="afterSuite"/>
           <include name="setUp"/>
           <include name="tearDown"/>
