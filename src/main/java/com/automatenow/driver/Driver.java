@@ -3,6 +3,7 @@ package com.automatenow.driver;
 import java.util.Objects;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import com.automatenow.constants.FrameworkConstants;
 import com.automatenow.enums.ConfigProperties;
@@ -14,11 +15,17 @@ public final class Driver {
 
 	}
 
-	public static void initDriver() throws Exception {
+	public static void initDriver(String browser) throws Exception {
 
 		if (Objects.isNull(DriverManager.getDriver())) {
-			System.setProperty("webdriver.chrome.driver", FrameworkConstants.getChromeDriverPath());
-			DriverManager.setDriver(new ChromeDriver());
+			if(browser.equalsIgnoreCase("chrome")) {
+				System.setProperty("webdriver.chrome.driver", FrameworkConstants.getChromeDriverPath());
+				DriverManager.setDriver(new ChromeDriver());
+			}else if (browser.equalsIgnoreCase("firefox")) {
+				System.setProperty("webdriver.gecko.driver", FrameworkConstants.getGeckoDriverPath());
+				DriverManager.setDriver(new FirefoxDriver());
+			}
+			
 			DriverManager.getDriver().get(PropertyUtils.get(ConfigProperties.URL));
 		}
 

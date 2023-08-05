@@ -6,6 +6,7 @@ import org.assertj.core.api.Assertions;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import com.automatenow.listeners.RetryFailedTests;
 import com.automatenow.pages.OrangeHRMHomePage;
 import com.automatenow.pages.OrangeHRMLoginPage;
 import com.automatenow.reports.ExtentReport;
@@ -18,7 +19,7 @@ public final class OrangeHRMTests extends BaseTest{
 	}
 	
 
-	@Test(dataProvider="getData", dataProviderClass = DataProviderUtils.class)
+	@Test
 	public void loginLogoutTest(Map<String, String> data) throws InterruptedException {
 		/*
 		OrangeHRMLoginPage ohlp = new OrangeHRMLoginPage();
@@ -41,7 +42,7 @@ public final class OrangeHRMTests extends BaseTest{
 	}
 	
 
-	@Test(dataProvider="getData", dataProviderClass = DataProviderUtils.class)
+	@Test
 	public void newTest(Map<String, String> data) throws InterruptedException {
 		/*
 		OrangeHRMLoginPage ohlp = new OrangeHRMLoginPage();

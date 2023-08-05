@@ -4,6 +4,7 @@
 <listeners>
 	<listener class-name="com.automatenow.listeners.ListenerClass"></listener>
 	<listener class-name="com.automatenow.listeners.MethodInterceptor"></listener>
+	<listener class-name="com.automatenow.listeners.AnnotationTransformer"></listener>
 </listeners>
   <test thread-count="1" name="Test" parallel="methods">
     <classes>
